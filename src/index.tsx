@@ -7,7 +7,7 @@ import {HashRouter as Router} from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/react-transition-group-go">
       <App />
     </Router>
   </React.StrictMode>,

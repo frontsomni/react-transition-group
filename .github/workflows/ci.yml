@@ -1,4 +1,4 @@
-name: React Transition Group
+name: React Transition Group Go
 on:
   push:
     tags:
