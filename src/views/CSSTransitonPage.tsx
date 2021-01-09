@@ -44,12 +44,15 @@ export default function CSSTransitonPage() {
               >
                 {index + 1} - {item}
                 <div>
+                  {
+                    list.length > 1
+                    && <button className="btn btn-primary mr-3"
+                        onClick={() => removeItem(index)}
+                      >移除</button>
+                  }
                   <button className="btn btn-primary"
                     onClick={addItem}
                   >增加</button>
-                  <button className="btn btn-primary ml-3"
-                    onClick={() => removeItem(index)}
-                  >移除</button>
                 </div>
               </li>
               </CSSTransition>
