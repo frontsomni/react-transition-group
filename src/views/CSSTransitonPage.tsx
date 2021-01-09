@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {CSSTransition} from 'react-transition-group'
-import './CSSTransitonPage.css'
+import './common.css'
 
 export default function CSSTransitonPage() {
   const [list, setList] = useState(() => [(new Date()).getTime()])
