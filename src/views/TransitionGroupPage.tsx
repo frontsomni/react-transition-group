@@ -24,9 +24,10 @@ export default function TransitionGroupPage() {
           {
             list.map((item, index) => (
               <CSSTransition
-                timeout={1000}
+                appear
+                timeout={800}
                 key={item}
-                classNames="fade"
+                classNames="page-fade"
               >
                 <li
                   className="list-group-item d-flex align-items-center justify-content-between"

@@ -23,9 +23,9 @@ export default function CSSTransitonPage() {
         <CSSTransition
           in={inStatus}
           appear
-          timeout={1000}
+          timeout={800}
           unmountOnExit
-          classNames="fade"
+          classNames="page-fade"
         >
           <p>状态： {inStatus ? '显示' : '隐藏'} </p>
         </CSSTransition>
@@ -34,8 +34,8 @@ export default function CSSTransitonPage() {
             list.map((item, index) => (
               <CSSTransition
               in
-              classNames="fade"
-              timeout={1000}
+              classNames="page-fade"
+              timeout={800}
               key={item}
               appear
             >

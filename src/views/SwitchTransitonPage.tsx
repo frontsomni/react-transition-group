@@ -12,7 +12,7 @@ export default function SwitchTransitonPage() {
       <CSSTransition
         key={state ? "Goodbye, world!" : "Hello, world!"}
         addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
-        classNames='fade'
+        classNames='page-fade'
       >
         <button onClick={() => setState(state => !state)}
           className="btn btn-primary"
