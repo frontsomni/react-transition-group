@@ -1,4 +1,4 @@
-import CSSTransitonPage from "../views/CSSTransitonPage"
+import CssTransitionPage from "../views/CssTransitionPage"
 import Home from "../views/Home"
 import SwitchTransitionPage from "../views/SwitchTransitionPage"
 import TransitionGroupPage from "../views/TransitionGroupPage"
@@ -9,11 +9,11 @@ const router = [{
   exact: true,
   component: TransitionPage
 }, {
-  path: '/csstransiton',
+  path: '/csstransition',
   exact: true,
-  component: CSSTransitonPage
+  component: CssTransitionPage
 }, {
-  path: '/transitongroup',
+  path: '/transitiongroup',
   exact: true,
   component: TransitionGroupPage
 }, {

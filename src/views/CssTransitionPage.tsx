@@ -22,7 +22,7 @@ export default function CSSTransitonPage() {
   return (
     <>
       <div className="container">
-        <h3 className="text-center">CSSTransitonPage</h3>
+        <h3 className="text-center">CssTransitionPage</h3>
         <ul className="list-group">
           {
             list.map((item, index) => (

@@ -4,8 +4,8 @@ import router from './router'
 
 function App() {
   let {pathname} = useLocation()
-  const match = ['/transition', '/csstransiton', '/transitongroup', '/switchtransition'].includes(pathname)
-  let sourcePath = pathname.substr(1).replace(/^[\w\d]{1}/, x => x.toUpperCase()) + 'Page'
+  const match = ['/transition', '/csstransition', '/transitiongroup', '/switchtransition'].includes(pathname)
+  let sourcePath = pathname.substr(1).replace(/^[\w\d]{1}/, x => x.toUpperCase()).replace(/transition|group/, x => x.substr(0, 1).toUpperCase() + x.substr(1)) + 'Page'
   return (
     <div className="app px-3 py-3 container">
       {
