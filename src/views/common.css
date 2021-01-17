@@ -1,35 +1,84 @@
-.page-fade-enter,
-.page-fade-appear{
+/* Transiton 组件过渡 */
+.transition-entering{
   opacity: 0;
 }
 
-.page-fade-enter-active,
-.page-fade-entering,
-.page-fade-appear-active{
+.transition-entered{
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+
+.transition-exiting{
+  opacity: 1;
+}
+
+.transition-exited{
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+}
+
+/* CSSTransitio 组件过渡 */
+.csstransition-fade-appear-active{
+  opacity: 0;
+}
+.csstransition-fade-appear-done{
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+.csstransition-fade-enter-active{
+  opacity: 0;
+}
+.csstransition-fade-enter-done{
   opacity: 1;
   transition: opacity 800ms ease-in-out;
 }
-
-.page-fade-enter-done,
-.page-fade-entered,
-.page-fade-appear-done{
+.csstransition-fade-exit-active{
   opacity: 1;
 }
+.csstransition-fade-exit-done{
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+}
 
-.page-fade-exit{
+/* SwitchTransiton 组件过渡 */
+.switchtransiton-fade-enter button{
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.switchtransiton-fade-enter-active button{
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 500ms, transform 500ms;
+}
+.switchtransiton-fade-exit  button{
+  opacity: 1;
+  transform: translateX(0%);
+}
+.switchtransiton-fade-exit-active button{
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* TransitionGroup 组件过渡 */
+.transition-group-fade-appear{
+  opacity: 0;
+}
+.transition-group-fade-appear-active{
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+.transition-group-fade-enter{
+  opacity: 0;
+}
+.transition-group-fade-enter-active{
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+.transition-group-fade-exit{
   opacity: 1;
 }
-
-.page-fade-exit-active{
+.transition-group-fade-exit-active{
   opacity: 0;
-  transition: opacity 800ms ease;
-}
-
-.page-fade-exit-done{
-  opacity: 0;
-}
-
-.page-fade-initial{
-  transition: opacity 2s ease-in-out 0ms;
-  opacity: 0;
+  transition: opacity 300ms ease-in-out;
 }

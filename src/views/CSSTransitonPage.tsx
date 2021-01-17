@@ -3,11 +3,15 @@ import {CSSTransition} from 'react-transition-group'
 import './common.css'
 
 export default function CSSTransitonPage() {
-  const [list, setList] = useState(() => [(new Date()).getTime()])
-  const [inStatus ,setinStatus] = useState(false)
+  const [list, setList] = useState(() => [
+    (new Date()).getTime(),
+    (new Date()).getTime() + 1,
+    (new Date()).getTime() + 2
+  ])
   const addItem = () => {
     setList([...list, (new Date()).getTime()])
   }
+  // 移除时没有过渡效果
   const removeItem = (index: number) => {
     setList(prev => {
       const tmp = [...prev]
@@ -19,43 +23,33 @@ export default function CSSTransitonPage() {
     <>
       <div className="container">
         <h3 className="text-center">CSSTransitonPage</h3>
-        <button className="btn btn-primary mb-3" onClick={() => setinStatus(!inStatus)}>文本展示</button>
-        <CSSTransition
-          in={inStatus}
-          appear
-          timeout={800}
-          unmountOnExit
-          classNames="page-fade"
-        >
-          <p>状态： {inStatus ? '显示' : '隐藏'} </p>
-        </CSSTransition>
         <ul className="list-group">
           {
             list.map((item, index) => (
               <CSSTransition
-              in
-              classNames="page-fade"
-              timeout={800}
               key={item}
-              appear
-            >
-              <li
-              className="list-group-item d-flex align-items-center justify-content-between"
+                in
+                classNames="csstransition-fade" // classNames 控制过渡
+                timeout={10}
+                appear // 初始化过渡
               >
-                {index + 1} - {item}
-                <div>
-                  {
-                    list.length > 1
-                    && <button className="btn btn-primary mr-3"
-                        onClick={() => removeItem(index)}
-                      >移除</button>
-                  }
-                  <button className="btn btn-primary"
-                    onClick={addItem}
-                  >增加</button>
-                </div>
-              </li>
-              </CSSTransition>
+                <li
+                  className="list-group-item d-flex align-items-center justify-content-between"
+                >
+                  {index + 1} - {item}
+                  <div>
+                    {
+                      list.length > 1
+                      && <button className="btn btn-primary mr-3"
+                          onClick={() => removeItem(index)}
+                        >移除</button>
+                    }
+                    <button className="btn btn-primary"
+                      onClick={addItem}
+                    >增加</button>
+                  </div>
+                </li>
+            </CSSTransition>
             ))
           }
         </ul>
